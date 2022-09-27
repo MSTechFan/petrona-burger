@@ -1,13 +1,10 @@
 import React from 'react'
-import Card from '../components/Card'
+import CarouselItem from '../components/CarouselItem'
 
 const Main = () => {
   return (
     <div className='container'>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        <CarouselItem />
     </div>
   )
 }
