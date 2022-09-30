@@ -6,8 +6,9 @@ const CarouselItem = () => {
     <Carousel>
       <Carousel.Item>
         <img
-          className="d-block w-100"
-          src="holder.js/800x400?text=First slide&bg=373940"
+          className="d-block"
+          style={{height: 500, width: "100vw"}}
+          src="https://cloudfront-us-east-1.images.arcpublishing.com/infobae/YHIW6C2CZBHIFGPLWQCFLXGDJI.jpg"
           alt="First slide"
         />
         <Carousel.Caption>
@@ -17,11 +18,11 @@ const CarouselItem = () => {
       </Carousel.Item>
       <Carousel.Item>
         <img
-          className="d-block w-100"
-          src="holder.js/800x400?text=Second slide&bg=282c34"
+          className="d-block"
+          style={{height: 500, width: "100vw"}}
+          src="https://media-cdn.tripadvisor.com/media/photo-s/1c/68/36/43/carro-chefe-da-casa-criado.jpg"
           alt="Second slide"
         />
-
         <Carousel.Caption>
           <h3>Second slide label</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -29,8 +30,9 @@ const CarouselItem = () => {
       </Carousel.Item>
       <Carousel.Item>
         <img
-          className="d-block w-100"
-          src="holder.js/800x400?text=Third slide&bg=20232a"
+          className="d-block"
+          style={{height: 500, width: "100vw"}}
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhWqjaIbCwgNYN_ihoh4_2AD5LMxt0stshqtlP0c80PLFzsnDfDC_qrYw_XGfyq7-2x8E&usqp=CAU"
           alt="Third slide"
         />
 

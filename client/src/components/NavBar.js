@@ -1,11 +1,13 @@
 import React from 'react'
-import {BsFillBasket3Fill} from 'react-icons/bs'
+import './navBar.css'
+
 
 const NavBar = () => {
   return (
-        <nav className="navbar navbar-expand-lg bg-light">
+        <nav className="fixed-top navbar navbar-expand-lg bg-light">
             <div className="container-fluid">
                 <a className="navbar-brand" href="#">Petrona Burger</a>
+                <button type="button" className="btn btn-warning">Pide ya!</button>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
                 </button>
@@ -21,13 +23,10 @@ const NavBar = () => {
                         <a className="nav-link disabled">Disabled</a>
                     </li>
                 </ul>
-                <form className="d-flex" role="search">
-                    <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                    <button className="btn btn-outline-success" type="submit">Search</button>
-                </form>
+                <button type="button" class="btn btn-success">Login</button>
                 </div>
-                <BsFillBasket3Fill />
             </div>
+            
         </nav>
   )
 }
