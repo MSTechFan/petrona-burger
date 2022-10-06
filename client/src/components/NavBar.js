@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './navBar.css'
 
 
@@ -23,10 +24,9 @@ const NavBar = () => {
                         <a className="nav-link disabled">Disabled</a>
                     </li>
                 </ul>
-                <button type="button" class="btn btn-success">Login</button>
+                <Link to='/login' className='btn btn-primary'>Login</Link>
                 </div>
-            </div>
-            
+            </div>            
         </nav>
   )
 }
