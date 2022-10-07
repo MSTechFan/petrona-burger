@@ -7,15 +7,15 @@ import './footer.css'
 const Footer = () => {
   return (
     <>
-        <div class="footer-banner container-fluid mt-5 mb-3 text-center">
-            <div class="row">
-                <div class="col">
+        <div className="footer-banner container-fluid mt-5 mb-3 text-center">
+            <div className="row">
+                <div className="col">
                   <RiTwitterLine/>
                 </div>
-                <div class="col">
+                <div className="col">
                   <RiGithubLine/>
                 </div>
-                <div class="col">
+                <div className="col">
                   <RiInstagramLine/>
                 </div>
             </div>
