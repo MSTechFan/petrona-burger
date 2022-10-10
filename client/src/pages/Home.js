@@ -1,14 +1,19 @@
 import React from 'react'
-import Footer from '../layouts/Footer'
-import Header from '../layouts/Header'
-import Main from '../layouts/Main'
+import FooterBanner from '../components/FooterBanner'
+import NavBar from '../components/NavBar'
+import Card from '../components/Card'
+import CarouselItem from '../components/CarouselItem'
 
 const Home = () => {
   return (
     <div className='container-fluid'>
-        <Header />
-        <Main />
-        <Footer />
+        <NavBar />
+        <CarouselItem />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <FooterBanner />
     </div>
         
   )

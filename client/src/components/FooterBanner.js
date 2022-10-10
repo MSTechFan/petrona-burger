@@ -2,9 +2,9 @@ import React from 'react'
 import {RiTwitterLine} from 'react-icons/ri'
 import {RiGithubLine} from 'react-icons/ri'
 import {RiInstagramLine} from 'react-icons/ri'
-import './footer.css'
+import './footerBanner.css'
 
-const Footer = () => {
+const FooterBanner = () => {
   return (
     <>
         <div className="footer-banner container-fluid mt-5 mb-3 text-center">
@@ -24,4 +24,4 @@ const Footer = () => {
   )
 }
 
-export default Footer
+export default FooterBanner
