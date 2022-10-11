@@ -5,11 +5,23 @@ import Card from '../components/Card'
 const Main = () => {
   return (
     <div className='container-fluid'>
-        <CarouselItem />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        <div className='row'>
+          <CarouselItem />
+        </div>
+        <div className='row'>
+          <div className='col-md-6 col-lg-3'>
+            <Card />
+          </div>
+          <div className='col-md-6 col-lg-3'>
+            <Card />
+          </div>
+          <div className='col-md-6 col-lg-3'>
+            <Card />
+          </div>
+          <div className='col-md-6 col-lg-3'>
+            <Card />
+          </div>
+        </div>
     </div>
   )
 }
