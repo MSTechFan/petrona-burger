@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-// import NavBar from './components/NavBar'
+import NavFooter from './layouts/NavFooter'
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Menu from './pages/Menu'
@@ -9,10 +9,12 @@ import NotFound from './pages/NotFound'
 
 const App = () => {
   return (
-    <Routes>  
+    <Routes>
       <Route path='/' element={<Home />}/>
-      <Route path='/login' element={<Login />}/>
-      <Route path='/newUser' element={<NewUser />}/>
+      <Route element={<NavFooter />}>
+        <Route path='/login' element={<Login />}/>
+        <Route path='/newUser' element={<NewUser />}/>
+      </Route>  
       <Route path='/menu' element={<Menu />}/>
       <Route path='*' element={<NotFound />}/>
     </Routes>
