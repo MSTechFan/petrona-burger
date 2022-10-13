@@ -1,10 +1,15 @@
 import React from 'react'
-import { ProductList } from '../components/ProductList'
+import FooterBanner from '../components/FooterBanner'
+import NavBar from '../components/NavBar'
+import MenuLayout from '../layouts/MenuLayout'
+
 
 const Menu = () => {
     return (
         <div className="container-fluid">
-            {ProductList}
+            <NavBar />
+            <MenuLayout />
+            <FooterBanner />
         </div>
     )
 }

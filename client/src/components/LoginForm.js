@@ -18,7 +18,7 @@ export const LoginForm = () => {
                 <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
                 <label className="form-check-label" for="exampleCheck1">Check me out</label>
             </div> */}
-            <button type="submit" className="btn btn-primary m-3">Submit</button>
+            <button type="submit" className="btn btn-primary m-3">Login</button>
             <Link to='/newUser' className='btn btn-primary m-3'>Create New Account</Link>
         </form>
     </>

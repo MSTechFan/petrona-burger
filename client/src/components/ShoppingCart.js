@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
+import Badge from 'react-bootstrap/Badge'
 import Modal from 'react-bootstrap/Modal';
 
 function ShoppingCart() {
@@ -11,9 +12,9 @@ function ShoppingCart() {
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-        Comprar
-      </Button>
-
+        Comprar <Badge bg="secondary">9</Badge>
+        <span className="visually-hidden">unread messages</span>
+      </Button> 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Modal heading</Modal.Title>
