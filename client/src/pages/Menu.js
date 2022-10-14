@@ -6,7 +6,7 @@ import MenuLayout from '../layouts/MenuLayout'
 
 const Menu = () => {
     return (
-        <div className="container-fluid">
+        <div className="container-fluid mt-7">
             <NavBar />
             <MenuLayout />
             <FooterBanner />
