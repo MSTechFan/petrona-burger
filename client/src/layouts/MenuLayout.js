@@ -9,17 +9,17 @@ const MenuLayout = () => {
         <div className='row mt-10'>
             <h1>Novedades</h1>
             {Novedades}
-            <span className='text-decoration-underline'>Ver mas...</span>
+            <a href='#'><span className='text-decoration-underline'>Ver mas...</span></a>
         </div>
         <div className='row mt-7'>
             <h1>Combos</h1>
             {Combos}
-            <span className='text-decoration-underline'>Ver mas...</span>
+            <a href='#'><span className='text-decoration-underline'>Ver mas...</span></a>
         </div>
         <div className='row mt-7'>
             <h1>Hamburguesas</h1>
             {Hamburguesas}
-            <span className='text-decoration-underline'>Ver mas...</span>
+            <a href='#'><span className='text-decoration-underline'>Ver mas...</span></a>
         </div>
     </div>
   )
