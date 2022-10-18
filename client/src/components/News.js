@@ -1,9 +1,9 @@
 import React from 'react'
 import { productListAPI } from '../productListAPI'
 
-export const Hamburguesas = productListAPI.hamburguesas.map(ele => {
+export const News = productListAPI.novedades.map(ele => {
   return (
-    <div className="card" style={{width: "18rem", margin: 5}}>
+      <div className="card" style={{width: "18rem", margin: 5}}>
           <img src="..." className="card-img-top" alt="..."/>
           <div className="card-body">
               <h2 className="card-title">{ele.name}</h2>
