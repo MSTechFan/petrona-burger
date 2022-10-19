@@ -1,8 +1,9 @@
 import React from 'react'
+import SectionLayout from '../layouts/SectionLayout'
 
 const HamburgersPage = () => {
   return (
-    <div>HamburgersPage</div>
+    <SectionLayout />
   )
 }
 
