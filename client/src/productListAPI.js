@@ -54,3 +54,30 @@ export const productListAPI = {
         },
     ],
 }
+
+export const fullListProducts = [
+    {
+        name: "producto 1",
+        description: "descripción del producto 1"
+    },
+    {
+        name: "producto 2",
+        description: "descripción del producto 2"
+    },
+    {
+        name: "producto 3",
+        description: "descripción del producto 3"
+    },
+    {
+        name: "producto 4",
+        description: "descripción del producto 4"
+    },
+    {
+        name: "producto 5",
+        description: "descripción del producto 5"
+    },
+    {
+        name: "producto 6",
+        description: "descripción del producto 6"
+    }
+]

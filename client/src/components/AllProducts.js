@@ -1,8 +1,8 @@
 import React from 'react'
-import { productListAPI } from '../productListAPI'
+import { fullListProducts } from '../productListAPI'
 import { AiFillPlusCircle } from 'react-icons/ai'
 
-export const Hamburgers = productListAPI.hamburguesas.map(ele => {
+export const AllProducts = fullListProducts.map(ele => {
   return (
     <div className="card" style={{width: "18rem", margin: 5}}>
           <img src="..." className="card-img-top" alt="..."/>
