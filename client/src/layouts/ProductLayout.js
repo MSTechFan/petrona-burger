@@ -9,17 +9,19 @@ const ProductLayout = () => {
   return (
     <>
         <NavBar />
-        <div>
+        <div className='container-fluid'>
           <div className='row'>
-            <div className='col-8'>
-              <span><BiSearchAlt2 /></span><input type="text" class="form-control" placeholder='Search product...'/>
+            <div className='col-4'>
+            <div className="input-group mb-3">
+              <input type="text" className="form-control" placeholder="Search product..." aria-label="Recipient's username" aria-describedby="basic-addon2"/>
+              <span className="input-group-text" id="basic-addon2"><BiSearchAlt2/></span>
+            </div>
             </div>
           </div>
           <div className='row'>
             <Outlet />
           </div>
         </div>
-        <Outlet />
         <FooterBanner />
     </>
   )

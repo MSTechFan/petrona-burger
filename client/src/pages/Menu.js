@@ -5,9 +5,9 @@ import { AllProducts } from '../components/AllProducts'
 
 const Menu = () => {
     return (
-        <>
+        <div className='d-flex flex-row flex-wrap'>
             {AllProducts}
-        </>
+        </div>
     )
 }
 
