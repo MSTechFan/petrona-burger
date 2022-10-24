@@ -1,3 +1,5 @@
 nav .navContainer {
+    background: rgb(238,238,238);
+    background: linear-gradient(110deg, rgba(238,238,238,1) 0%, rgba(207,10,10,1) 26%, rgba(220,95,0,1) 63%);
     position: sticky;
 }

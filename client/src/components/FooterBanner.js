@@ -7,16 +7,19 @@ import './footerBanner.css'
 const FooterBanner = () => {
   return (
     <>
-        <div className="footer-banner container-fluid mt-5 mb-3 text-center">
-            <div className="row">
-                <div className="col">
+        <div className='footer-banner'>
+            <div className='row'>
+                <div className='col-6'>
                   <RiTwitterLine/>
-                </div>
-                <div className="col">
+                  <RiInstagramLine/>
                   <RiGithubLine/>
                 </div>
-                <div className="col">
-                  <RiInstagramLine/>
+                <div className='col-6'>
+                  <ul className='d-flex flex-row flex-wrap justify-content-center align-items-center' style={{listStyle: "none"}}>
+                    <li>About Us</li>
+                    <li>Work with Us</li>
+                    <li>Terms and Conditions</li>
+                  </ul>
                 </div>
             </div>
         </div>

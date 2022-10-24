@@ -1,26 +1,15 @@
 import React from 'react'
 import CarouselItem from '../components/CarouselItem'
-import Card from '../components/Card'
+import { Cards } from '../components/Cards'
 
 const Main = () => {
   return (
-    <div className='container-fluid'>
+    <div>
         <div className='row'>
           <CarouselItem />
         </div>
-        <div className='row'>
-          <div className='col-md-6 col-lg-3'>
-            <Card />
-          </div>
-          <div className='col-md-6 col-lg-3'>
-            <Card />
-          </div>
-          <div className='col-md-6 col-lg-3'>
-            <Card />
-          </div>
-          <div className='col-md-6 col-lg-3'>
-            <Card />
-          </div>
+        <div className='d-flex flex-row flex-wrap justify-content-evenly' style={{marginTop: "20px"}}>
+          {Cards}
         </div>
     </div>
   )

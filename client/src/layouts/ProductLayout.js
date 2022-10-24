@@ -9,7 +9,7 @@ const ProductLayout = () => {
   return (
     <>
         <NavBar />
-        <div className='container-fluid'>
+        <div className='container-fluid' style={{marginTop: "40px"}}>
           <div className='row'>
             <div className='col-4'>
             <div className="input-group mb-3">
@@ -22,7 +22,6 @@ const ProductLayout = () => {
             <Outlet />
           </div>
         </div>
-        <FooterBanner />
     </>
   )
 }

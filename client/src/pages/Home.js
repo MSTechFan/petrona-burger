@@ -5,7 +5,7 @@ import Main from '../layouts/Main'
 
 const Home = () => {
   return (
-    <div className='container-fluid'>
+    <div>
         <NavBar />
         <Main />
         <FooterBanner />

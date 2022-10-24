@@ -6,8 +6,8 @@ import ShoppingCart from './ShoppingCart'
 
 const NavBar = () => {
   return (
-        <nav className='navbar navbar-expand-lg bg-light'>
-            <div className="container-fluid row">
+        <nav className='navbar navbar-expand-lg bg-light navContainer'>
+            <div className="container-fluid row" style={{width: "100vw"}}>
                 <div className='col-2'>
                     <h2>Petrona Burger</h2>
                 </div>

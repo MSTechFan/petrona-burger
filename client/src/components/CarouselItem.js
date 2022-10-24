@@ -1,48 +1,50 @@
 import React from 'react'
 import {Carousel} from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import {productListAPI} from '../productListAPI'
 
 const CarouselItem = () => {
-  const [HEIGHT, WIDTH] = ["100vh", "100vw"]
-  
+  const [HEIGHT, WIDTH] = ["93vh", "100vw"]
+  const COMBOS = productListAPI.combos.map(ele => ele)
   return (
     <Carousel>
       <Carousel.Item>
-        <img
-          className="d-block"
-          style={{height: HEIGHT, width: WIDTH}}
-          src="https://cloudfront-us-east-1.images.arcpublishing.com/infobae/YHIW6C2CZBHIFGPLWQCFLXGDJI.jpg"
-          alt="First slide"
-        />
+        <Link to='/products/combos'>
+          <img
+            className="d-block"
+            style={{height: HEIGHT, width: WIDTH}}
+            src={COMBOS[0].img}
+            alt="First slide"
+          />
+        </Link>
         <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h3>{COMBOS[0].name}</h3>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img
-          className="d-block"
-          style={{height: HEIGHT, width: WIDTH}}
-          src="https://media-cdn.tripadvisor.com/media/photo-s/1c/68/36/43/carro-chefe-da-casa-criado.jpg"
-          alt="Second slide"
-        />
+        <Link to="products/combos">
+          <img
+            className="d-block"
+            style={{height: HEIGHT, width: WIDTH}}
+            src={COMBOS[1].img}
+            alt="Second slide"
+          />
+        </Link>
         <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h3>{COMBOS[1].name}</h3>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img
-          className="d-block"
-          style={{height: HEIGHT, width: WIDTH}}
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhWqjaIbCwgNYN_ihoh4_2AD5LMxt0stshqtlP0c80PLFzsnDfDC_qrYw_XGfyq7-2x8E&usqp=CAU"
-          alt="Third slide"
-        />
-
+        <Link to="products/combos">
+          <img
+            className="d-block"
+            style={{height: HEIGHT, width: WIDTH}}
+            src={COMBOS[2].img}
+            alt="Third slide"
+          />
+        </Link>
         <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
+          <h3>{COMBOS[2].name}</h3>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
