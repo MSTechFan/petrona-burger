@@ -1,8 +1,10 @@
 .footer-banner {
-    border: 2px solid black;
+    margin-top: 20px;
     height: 100px;
+    width: 100vw;
+    border-top: 1px solid black;
 }
 
-.footer-banner ul li {
-    text-decoration: none;
+.footer-banner li {
+    margin-left: 20px;
 }
