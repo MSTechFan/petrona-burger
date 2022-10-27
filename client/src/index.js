@@ -4,7 +4,7 @@ import App from './App';
 import * as Popper from "@popperjs/core"
 // Import all of Bootstrap's JS
 import * as bootstrap from 'bootstrap'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles/css/app.css';
 import { BrowserRouter } from 'react-router-dom'
 
 const root = createRoot(document.querySelector('#root'))

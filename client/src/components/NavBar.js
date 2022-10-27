@@ -1,12 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import './navBar.css'
 import ShoppingCart from './ShoppingCart'
 
 
 const NavBar = () => {
   return (
-        <nav className='navbar navbar-expand-lg bg-light navContainer'>
+        <nav className='navbar navbar-expand-lg'>
             <div className="container-fluid row" style={{width: "100vw"}}>
                 <div className='col-2'>
                     <h2>Petrona Burger</h2>
@@ -22,13 +21,13 @@ const NavBar = () => {
                 <div className="collapse navbar-collapse col-3" id="navbarSupportedContent" style={{}}>
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <Link to='/' className='nav-link text-decoration-none'>Home</Link>
+                                <Link to='/' className='nav-link primary text-decoration-none'>Home</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to='/products/menu' className='nav-link text-decoration-none'>Productos</Link>
+                                <Link to='/products/menu' className='nav-link primary text-decoration-none'>Productos</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to='/login' className='nav-link text-decoration-none'>Login</Link>
+                                <Link to='/login' className='nav-link primary text-decoration-none'>Login</Link>
                             </li>
                         </ul>
                 </div>

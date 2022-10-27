@@ -1,0 +1,14 @@
+@use "../../../node_modules/bootstrap/scss/bootstrap.scss";
+
+body{
+    background-image: linear-gradient(to top, #faf0ca, #f9e9b0, #f7e295, #f6db7a, #f4d35e);
+    color: #0d3b66;
+}
+
+.btn-primary {
+    background-image: linear-gradient(to right top, #ee964b, #f18942, #f47a3c, #f76a39, #f95738);
+}
+
+.primary {
+    color: #0d3b66;
+}

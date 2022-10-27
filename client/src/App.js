@@ -9,7 +9,6 @@ import Menu from './pages/Menu'
 import NewsPage from './pages/NewsPage'
 import NewUser from './pages/NewUser'
 import NotFound from './pages/NotFound'
-import './app.css'
 
 const App = () => {
   return (

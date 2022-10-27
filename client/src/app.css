@@ -15,7 +15,7 @@
   */
   html, body {
     height: 100%;
-    background-color: #faf0ca;
+    background-color: #faf0ca !important;
     color: #0d3b66;
   }
   /*
