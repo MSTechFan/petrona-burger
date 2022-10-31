@@ -8,7 +8,7 @@ const Main = () => {
         <div className='row'>
           <CarouselItem />
         </div>
-        <div className='d-flex flex-row flex-wrap justify-content-evenly' style={{marginTop: "20px"}}>
+        <div className='d-flex flex-row flex-wrap justify-content-evenly' style={{margin: "20px 0"}}>
           {Cards}
         </div>
     </div>

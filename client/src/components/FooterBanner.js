@@ -2,7 +2,6 @@ import React from 'react'
 import {RiTwitterLine} from 'react-icons/ri'
 import {RiGithubLine} from 'react-icons/ri'
 import {RiInstagramLine} from 'react-icons/ri'
-import './footerBanner.css'
 
 const FooterBanner = () => {
   const StylesIcons = {
@@ -12,7 +11,7 @@ const FooterBanner = () => {
   }
   return (
     <>
-        <div className='footer-banner'>
+        <div className='footer'>
           <div className='row' style={{height: "100%"}}>
                 <div className='col-6 d-flex justify-content-center align-items-center' style={{height: "100%"}}>
                   <div className='d-flex justify-content-between align-items-center' style={{width: "60px", height: "60px"}}>

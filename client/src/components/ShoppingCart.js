@@ -25,26 +25,29 @@ function ShoppingCart() {
         <span className="visually-hidden">unread messages</span>
       </Button>  */}
       <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
+        <Modal.Header closeButton style={{backgroundColor: "#faf0ca"}}>
           <Modal.Title>Shopping Cart</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
+        <Modal.Body style={{backgroundColor: "#faf0ca"}}>
           <div className='row'>
-            <div className='col-9'>Here it is the product</div>
-            <div className='col-3'><BsChevronLeft /> {cart} <BsChevronRight /></div>
+            <div className='col-9'>Combos 1</div>
+            <div className='col-3'><BsChevronLeft style={{cursor: "pointer"}} /> {cart} <BsChevronRight style={{cursor: "pointer"}}/></div>
           </div>
           <div className='row mt-5'>
             <div className='col-5'><input type="text" class="form-control" /></div>
             <div className='col-7'>Discount Code</div>
           </div>
         </Modal.Body>
-        <Modal.Footer>
+        <Modal.Footer style={{backgroundColor: "#faf0ca"}}>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={handleClose}>
+          <button className="btn-primary" onClick={handleClose}>
             Buy
-          </Button>
+          </button>
+          {/* <Button variant="primary" onClick={handleClose}>
+            Buy
+          </Button> */}
         </Modal.Footer>
       </Modal>
     </>

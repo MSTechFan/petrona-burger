@@ -1,13 +1,12 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-import FooterBanner from '../components/FooterBanner'
 import NavBar from '../components/NavBar'
 import { BiSearchAlt2 } from 'react-icons/bi'
 
 
 const ProductLayout = () => {
   return (
-    <>
+    <div className='container-fluid' style={{height: "100vh"}}>
         <NavBar />
         <div className='container-fluid' style={{marginTop: "40px"}}>
           <div className='row'>
@@ -22,7 +21,7 @@ const ProductLayout = () => {
             <Outlet />
           </div>
         </div>
-    </>
+    </div>
   )
 }
 
