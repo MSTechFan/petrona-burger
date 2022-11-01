@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import ShoppingCart from './ShoppingCart'
 
 
-const NavBar = () => {
+const NavBar = (props) => {
   return (
         <nav className='navbar navbar-expand-lg'>
             <div className="container-fluid row" style={{width: "100vw"}}>
@@ -11,7 +11,7 @@ const NavBar = () => {
                     <h2>Petrona Burger</h2>
                 </div>
                 <div className='col-4 text-end'>
-                    <ShoppingCart/>
+                    <ShoppingCart cartState={props.cartState}/>
                 </div>
                 <div className='col-3'>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

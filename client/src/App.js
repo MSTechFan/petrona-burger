@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import NavFooter from './layouts/NavFooter'
 import ProductLayout from './layouts/ProductLayout'
@@ -11,9 +11,10 @@ import NewUser from './pages/NewUser'
 import NotFound from './pages/NotFound'
 
 const App = () => {
+  const [cartState, setCarState] = useState(9)
   return (
     <Routes>
-      <Route path='/' element={<Home />}/>
+      <Route path='/' element={<Home cartState={cartState}/>} />
       <Route element={<NavFooter />}>
         <Route path='login' element={<Login />}/>
         <Route path='newUser' element={<NewUser />}/>

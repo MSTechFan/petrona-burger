@@ -5,19 +5,18 @@ import Modal from 'react-bootstrap/Modal';
 import { GiHamburger } from 'react-icons/gi'
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs'
 
-function ShoppingCart() {
+function ShoppingCart(props) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const cart = 9
 
   return (
     
     <>
     <div>
       <GiHamburger style={{height: "30px", width: "30px", cursor: "pointer"}} onClick={handleShow} />
-      <Badge bg="secondary">{cart}</Badge>
+      <Badge bg="secondary">{props.cartState}</Badge>
       <span className="visually-hidden">unread messages</span>
     </div>
       {/* <Button variant="primary" onClick={handleShow}>
@@ -31,7 +30,7 @@ function ShoppingCart() {
         <Modal.Body style={{backgroundColor: "#faf0ca"}}>
           <div className='row'>
             <div className='col-9'>Combos 1</div>
-            <div className='col-3'><BsChevronLeft style={{cursor: "pointer"}} /> {cart} <BsChevronRight style={{cursor: "pointer"}}/></div>
+            <div className='col-3'><BsChevronLeft style={{cursor: "pointer"}} /> {props.cartState} <BsChevronRight style={{cursor: "pointer"}}/></div>
           </div>
           <div className='row mt-5'>
             <div className='col-5'><input type="text" class="form-control" /></div>
