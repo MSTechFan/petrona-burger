@@ -1,7 +1,4 @@
-import React from 'react'
-import {RiTwitterLine} from 'react-icons/ri'
-import {RiGithubLine} from 'react-icons/ri'
-import {RiInstagramLine} from 'react-icons/ri'
+import {RiTwitterLine, RiGithubLine, RiInstagramLine} from 'react-icons/ri'
 
 const FooterBanner = () => {
   const StylesIcons = {
@@ -15,9 +12,9 @@ const FooterBanner = () => {
           <div className='row' style={{height: "100%"}}>
                 <div className='col-6 d-flex justify-content-center align-items-center' style={{height: "100%"}}>
                   <div className='d-flex justify-content-between align-items-center' style={{width: "60px", height: "60px"}}>
-                    <a href='https://twitter.com/MSTechFan' target="_blank" style={{marginLeft: "5px"}}><RiTwitterLine style={StylesIcons}/></a>
-                    <a href='https://www.instagram.com/mstechfan/' target="_blank" style={{marginLeft: "5px"}}><RiInstagramLine style={StylesIcons}/></a>
-                    <a href='https://github.com/MSTechFan' target="_blank" style={{marginLeft: "5px"}}><RiGithubLine style={StylesIcons}/></a>
+                    <a href='https://twitter.com/MSTechFan' target="_blank" style={{marginLeft: "5px"}} rel="noreferrer"><RiTwitterLine style={StylesIcons}/></a>
+                    <a href='https://www.instagram.com/mstechfan/' target="_blank" style={{marginLeft: "5px"}} rel="noreferrer"><RiInstagramLine style={StylesIcons}/></a>
+                    <a href='https://github.com/MSTechFan' target="_blank" style={{marginLeft: "5px"}} rel="noreferrer"><RiGithubLine style={StylesIcons}/></a>
                   </div>
                 </div>
                 <div className='col-6 d-flex justify-content-center align-items-center'>

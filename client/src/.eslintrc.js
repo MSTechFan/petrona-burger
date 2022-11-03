@@ -13,6 +13,7 @@ module.exports = {
 		'plugin:react/jsx-runtime',
 		'standard',
 		'eslint-config-prettier',
+		'plugin:react-hooks/recommended',
 	],
 	parserOptions: {
 		ecmaFeatures: {
@@ -21,6 +22,12 @@ module.exports = {
 		ecmaVersion: 'latest',
 		sourceType: 'module',
 	},
-	plugins: ['react'],
-	rules: {},
+	plugins: [
+		'react',
+		'react-hooks'
+	],
+	rules: {
+		"react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+    	"react-hooks/exhaustive-deps": "warn" // Checks effect dependencies
+	},
 }

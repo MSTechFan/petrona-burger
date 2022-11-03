@@ -1,4 +1,3 @@
-import React from 'react'
 import NavBar from '../components/NavBar'
 
 const NotFound = () => {
@@ -7,7 +6,7 @@ const NotFound = () => {
         <NavBar />
         <h1>404 Error Page</h1>
         <p className="zoom-area"><b>Oops...</b>  something went wrong. </p>
-        <section class="error-container">
+        <section className="error-container">
           <span><span>4</span></span>
           <span>0</span>
           <span><span>4</span></span>

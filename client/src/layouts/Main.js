@@ -1,4 +1,3 @@
-import React from 'react'
 import CarouselItem from '../components/CarouselItem'
 import { Cards } from '../components/Cards'
 
