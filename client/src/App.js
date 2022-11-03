@@ -9,13 +9,11 @@ import Menu from './pages/Menu'
 import NewsPage from './pages/NewsPage'
 import NewUser from './pages/NewUser'
 import NotFound from './pages/NotFound'
+import NavTest from './layouts/NavTest'
 
 const App = () => {
   return (
-    <Routes>
-      <Route element={<NavTest/>}>
-
-      </Route>
+    <Routes>  
       <Route path='/' element={<Home/>} />
       <Route element={<NavFooter />}>
         <Route path='login' element={<Login />}/>

@@ -1,24 +1,23 @@
-import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
+import React, { useState } from 'react'
+import Button from 'react-bootstrap/Button'
 import Badge from 'react-bootstrap/Badge'
-import Modal from 'react-bootstrap/Modal';
+import Modal from 'react-bootstrap/Modal'
 import { GiHamburger } from 'react-icons/gi'
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs'
+import { useSelector } from 'react-redux'
 
 function ShoppingCart() {
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const CART = 1
+  const Cart = useSelector((state) => state.cart.value)
   return (
-    
     <>
-    <div>
-      <GiHamburger style={{height: "30px", width: "30px", cursor: "pointer"}} onClick={handleShow} />
-      <Badge bg="secondary">{CART}</Badge>
-      <span className="visually-hidden">unread messages</span>
-    </div>
+      <div>
+        <GiHamburger style={{height: "30px", width: "30px", cursor: "pointer"}} onClick={handleShow} />
+        <Badge bg="secondary">{Cart === 0? "" : Cart}</Badge>
+        <span className="visually-hidden">unread messages</span>
+      </div>
       {/* <Button variant="primary" onClick={handleShow}>
         Comprar <Badge bg="secondary">9</Badge>
         <span className="visually-hidden">unread messages</span>
@@ -30,7 +29,7 @@ function ShoppingCart() {
         <Modal.Body style={{backgroundColor: "#faf0ca"}}>
           <div className='row'>
             <div className='col-9'>Combos 1</div>
-            <div className='col-3'><BsChevronLeft style={{cursor: "pointer"}} /> {CART} <BsChevronRight style={{cursor: "pointer"}}/></div>
+            <div className='col-3'><BsChevronLeft style={{cursor: "pointer"}} /> {Cart} <BsChevronRight style={{cursor: "pointer"}}/></div>
           </div>
           <div className='row mt-5'>
             <div className='col-5'><input type="text" class="form-control" /></div>

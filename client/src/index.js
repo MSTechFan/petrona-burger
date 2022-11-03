@@ -6,11 +6,16 @@ import * as Popper from "@popperjs/core"
 import * as bootstrap from 'bootstrap'
 import './styles/css/app.css';
 import { BrowserRouter } from 'react-router-dom'
+import store from './store';
+import { Provider } from 'react-redux';
 
 const root = createRoot(document.querySelector('#root'))
 
 root.render(
-    <BrowserRouter>
-        <App />
-    </BrowserRouter>
+    <Provider store={store}>
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
+    </Provider>
+    
 )
