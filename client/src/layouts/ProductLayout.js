@@ -5,7 +5,7 @@ import { BiSearchAlt2 } from 'react-icons/bi'
 
 const ProductLayout = () => {
   return (
-    <div className='container-fluid' style={{height: "100vh"}}>
+    <div style={{height: "100vh", width: "100vw"}}>
         <NavBar />
         <div className='container-fluid' style={{marginTop: "40px"}}>
           <div className='row'>

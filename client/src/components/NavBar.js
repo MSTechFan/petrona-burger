@@ -18,7 +18,7 @@ const NavBar = () => {
                     </button>
                 </div>
                 <div className="collapse navbar-collapse col-3" id="navbarSupportedContent" style={{}}>
-                        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                        <ul className="navbar-nav me-auto mb-2 mb-lg-0" style={{fontWeight: "700"}}>
                             <li className="nav-item">
                                 <Link to='/' className='nav-link primary text-decoration-none'>Home</Link>
                             </li>
