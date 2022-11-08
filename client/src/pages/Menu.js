@@ -1,7 +1,7 @@
 import { fullListProducts } from '../productListAPI'
 import { AiFillPlusCircle } from 'react-icons/ai'
 import { useDispatch } from 'react-redux'
-import { addToCart } from '../features/cartSlice'
+import { EvalEleAndAddToCart } from '../features/cartSlice'
 
 const Menu = () => {
     const dispatch = useDispatch()
@@ -14,7 +14,7 @@ const Menu = () => {
                           <div className="card-body">
                               <h2 className="card-title">{ele.name}</h2>
                               <p className="card-text">{ele.description}</p>
-                              <AiFillPlusCircle style={{width: "30px", height: "30px"}} onClick={() => dispatch(addToCart(ele))}/>
+                              <AiFillPlusCircle style={{width: "30px", height: "30px"}} onClick={() => dispatch(EvalEleAndAddToCart(ele))}/>
                           </div>
                     </div>
                 )    

@@ -4,18 +4,23 @@ import Badge from 'react-bootstrap/Badge'
 import Modal from 'react-bootstrap/Modal'
 import { GiHamburger } from 'react-icons/gi'
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { DeleteOneCart, AddOneCart} from '../features/cartSlice'
 
 function ShoppingCart() {
+  const dispatch = useDispatch()
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const Cart = useSelector((state) => state.cart.value)
+  const cartQuantity = Cart.reduce((accumulator, curValue) => {
+    return accumulator + curValue.quantity
+  }, 0)
   return (
     <>
       <div>
         <GiHamburger style={{height: "30px", width: "30px", cursor: "pointer"}} onClick={handleShow} />
-        <Badge bg="secondary">{Cart.length === 0? "" : Cart.length}</Badge>
+        <Badge bg="secondary">{cartQuantity === 0? "" : cartQuantity}</Badge>
         <span className="visually-hidden">unread messages</span>
       </div>
       <Modal show={show} onHide={handleClose}>
@@ -28,7 +33,7 @@ function ShoppingCart() {
               return (
                 <div className='row' key={product.id}>
                   <div className='col-9'>{product.name}</div>
-                  <div className='col-3'><BsChevronLeft style={{cursor: "pointer"}} /> {Cart.length} <BsChevronRight style={{cursor: "pointer"}}/></div>
+                  <div className='col-3'><BsChevronLeft style={{cursor: "pointer"}} onClick={() => dispatch(DeleteOneCart(product))} /> {product.quantity} <BsChevronRight style={{cursor: "pointer"}} onClick={() => dispatch(AddOneCart(product))}/></div>
                 </div> 
               )
             })
