@@ -16,6 +16,9 @@ function ShoppingCart() {
   const cartQuantity = Cart.reduce((accumulator, curValue) => {
     return accumulator + curValue.quantity
   }, 0)
+  const cartPrice = Cart.reduce((accumulator, curValue) => {
+    return accumulator + (curValue.price * curValue.quantity)
+  }, 0)
   return (
     <>
       <div>
@@ -38,6 +41,14 @@ function ShoppingCart() {
               )
             })
           }
+          <div className='row mt-3'>
+            <div className='col-6'>
+              <h4>Total:</h4>
+            </div>
+            <div className='col-6'>
+              <h4>${cartPrice}</h4>
+            </div>
+          </div>
           <div className='row mt-5'>
             <div className='col-5'><input type="text" className="form-control" /></div>
             <div className='col-7'>Discount Code</div>

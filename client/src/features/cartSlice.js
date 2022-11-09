@@ -27,10 +27,11 @@ export const cartSlice = createSlice({
             const eleIndex = state.value.findIndex(eleToFind => eleToFind.name === action.payload.name)
             if(state.value[eleIndex].quantity <= 1) state.value.splice(eleIndex, 1)
             else state.value[eleIndex].quantity -= 1
-        }
+        },
+        // SearchItems: ""
     }
 })
 
-export const {EvalEleAndAddToCart, AddOneCart, DeleteOneCart} = cartSlice.actions
+export const {EvalEleAndAddToCart, AddOneCart, DeleteOneCart, SearchItems} = cartSlice.actions
 
 export default cartSlice.reducer
