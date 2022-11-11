@@ -1,13 +1,13 @@
-import { fullListProducts } from '../productListAPI'
 import { AiFillPlusCircle } from 'react-icons/ai'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { EvalEleAndAddToCart } from '../features/cartSlice'
 
 const Menu = () => {
+    const Product = useSelector((state) => state.product.value)
     const dispatch = useDispatch()
     return (
         <div className='d-flex flex-row flex-wrap'>
-            {fullListProducts.map((ele) => {
+            {Product.map((ele) => {
                 return (
                     <div className="card" style={{width: "18rem", margin: 5}} key={ele.id}>
                           <img src={ele.img} className="card-img-top" alt="..."/>

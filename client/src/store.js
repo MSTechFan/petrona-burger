@@ -1,9 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit"
 import cartSlice from "./features/cartSlice"
+import productSlice from './features/productSlice'
 
 export default configureStore({
     reducer: {
         cart: cartSlice,
+        product: productSlice,
     },
-    middleware: []
 })
