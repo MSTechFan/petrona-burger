@@ -59,49 +59,48 @@ export const productListAPI = {
             price: 19,
         },
     ],
+    "products": [
+        {
+            name: "producto 1",
+            description: "descripción del producto 1",
+            img: "https://dummyimage.com/1055x575/000/0011ff&text=Productos+1",
+            id: 100,
+            price: 30,
+        },
+        {
+            name: "producto 2",
+            description: "descripción del producto 2",
+            img: "https://dummyimage.com/1055x575/000/0011ff&text=Productos+2",
+            id: 200,
+            price: 20,
+        },
+        {
+            name: "producto 3",
+            description: "descripción del producto 3",
+            img: "https://dummyimage.com/1055x575/000/0011ff&text=Productos+3",
+            id: 300,
+            price: 15,
+        },
+        {
+            name: "producto 4",
+            description: "descripción del producto 4",
+            img: "https://dummyimage.com/1055x575/000/0011ff&text=Productos+4",
+            id: 400,
+            price: 18,
+        },
+        {
+            name: "producto 5",
+            description: "descripción del producto 5",
+            img: "https://dummyimage.com/1055x575/000/0011ff&text=Productos+5",
+            id: 500,
+            price: 26,
+        },
+        {
+            name: "producto 6",
+            description: "descripción del producto 6",
+            img: "https://dummyimage.com/1055x575/000/0011ff&text=Productos+6",
+            id: 600,
+            price: 31,
+        }
+    ]
 }
-
-export const fullListProducts = [
-    {
-        name: "producto 1",
-        description: "descripción del producto 1",
-        img: "https://dummyimage.com/1055x575/000/0011ff&text=Productos+1",
-        id: 100,
-        price: 30,
-    },
-    {
-        name: "producto 2",
-        description: "descripción del producto 2",
-        img: "https://dummyimage.com/1055x575/000/0011ff&text=Productos+2",
-        id: 200,
-        price: 20,
-    },
-    {
-        name: "producto 3",
-        description: "descripción del producto 3",
-        img: "https://dummyimage.com/1055x575/000/0011ff&text=Productos+3",
-        id: 300,
-        price: 15,
-    },
-    {
-        name: "producto 4",
-        description: "descripción del producto 4",
-        img: "https://dummyimage.com/1055x575/000/0011ff&text=Productos+4",
-        id: 400,
-        price: 18,
-    },
-    {
-        name: "producto 5",
-        description: "descripción del producto 5",
-        img: "https://dummyimage.com/1055x575/000/0011ff&text=Productos+5",
-        id: 500,
-        price: 26,
-    },
-    {
-        name: "producto 6",
-        description: "descripción del producto 6",
-        img: "https://dummyimage.com/1055x575/000/0011ff&text=Productos+6",
-        id: 600,
-        price: 31,
-    }
-]

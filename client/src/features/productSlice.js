@@ -1,21 +1,33 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fullListProducts } from '../productListAPI'
+import { productListAPI } from '../productListAPI'
 
 const productSlice = createSlice({
     name: 'product',
     initialState: {
-        value: fullListProducts
+        value: productListAPI
     },
     reducers: {
         SearchProduct: (state, action) => {
             const findWordRegex = new RegExp(action.payload)
             if(action.payload !== ""){
-                state.value = state.value.filter(eleToFind => findWordRegex.test(eleToFind.name))
+                state.value.products = productListAPI.products.filter(eleToFind => findWordRegex.test(eleToFind.name))
             }
-        }
+        },
+        SearchCombo: (state, action) => {
+            const findWordRegex = new RegExp(action.payload)
+            if(action.payload !== ""){
+                state.value.combos = productListAPI.combos.filter(eleToFind => findWordRegex.test(eleToFind.name))
+            }
+        },
+        SearchNew: (state, action) => {
+            const findWordRegex = new RegExp(action.payload)
+            if(action.payload !== ""){
+                state.value.news = productListAPI.news.filter(eleToFind => findWordRegex.test(eleToFind.name))
+            }
+        },
     }
 })
 
-export const { SearchProduct } = productSlice.actions
+export const { SearchProduct, SearchCombo, SearchNew } = productSlice.actions
 
 export default productSlice.reducer

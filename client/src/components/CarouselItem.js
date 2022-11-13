@@ -8,7 +8,7 @@ const CarouselItem = () => {
   return (
     <Carousel>
       <Carousel.Item>
-        <Link to='/products/combos'>
+        <Link to='combos'>
           <img
             className="d-block"
             style={{height: HEIGHT, width: WIDTH}}
@@ -21,7 +21,7 @@ const CarouselItem = () => {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <Link to="products/combos">
+        <Link to="combos">
           <img
             className="d-block"
             style={{height: HEIGHT, width: WIDTH}}
@@ -34,7 +34,7 @@ const CarouselItem = () => {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <Link to="products/combos">
+        <Link to="combos">
           <img
             className="d-block"
             style={{height: HEIGHT, width: WIDTH}}

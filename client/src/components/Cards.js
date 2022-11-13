@@ -9,7 +9,7 @@ export const Cards = News.map(ele => {
       <img src={ele.img} style={{width: "100%", height: "220px"}} className="card-img-top" alt="..."/>
       <div className="card-body">
           <h5 className="card-title">{ele.name}</h5>
-          <Link to="products/news" className="btn-primary">Ir</Link>
+          <Link to="news" className="btn-primary">Ir</Link>
       </div>
     </div>
   )

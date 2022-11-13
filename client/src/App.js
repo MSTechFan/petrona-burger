@@ -1,6 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
 import NavFooter from './layouts/NavFooter'
-import ProductLayout from './layouts/ProductLayout'
 import Combos from './pages/Combos'
 import Home from './pages/Home'
 import Login from './pages/Login'
@@ -17,11 +16,9 @@ const App = () => {
         <Route path='login' element={<Login />}/>
         <Route path='newUser' element={<NewUser />}/>
       </Route>
-      <Route path='products' element={<ProductLayout />}>
-        <Route path='menu' element={<Menu />} />
-        <Route path='combos' element={<Combos />} />
-        <Route path='news' element={<News />} />
-      </Route>  
+      <Route path='menu' element={<Menu />}/>
+      <Route path='combos' element={<Combos />}/>
+      <Route path='news' element={<News />}/>
       <Route path='*' element={<NotFound />}/>
     </Routes>
   )
