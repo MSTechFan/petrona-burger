@@ -5,6 +5,20 @@
 @use "./not-found";
 @use "./dynamic-card";
 
+@include media-breakpoint-up (md){
+    .dynamic-card {
+        width: 21rem
+    }
+    
+}
+
+@include media-breakpoint-up (sm){
+    .dynamic-card {
+        width: 26rem
+    }
+    
+}
+
 body{
     background-image: linear-gradient(to top, #faf0ca, #f9e9b0, #f7e295, #f6db7a, #f4d35e);
     color: #0d3b66;

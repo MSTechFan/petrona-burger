@@ -11041,7 +11041,6 @@ textarea.form-control-lg {
 
 .page-container {
   position: relative;
-  min-height: 100vh;
 }
 
 .content-wrap {
@@ -11269,6 +11268,21 @@ a.more-link {
   text-decoration: none;
   margin-top: 50px;
   letter-spacing: 1px;
+}
+
+.dynamic-card {
+  width: 18rem;
+  margin: 6px;
+}
+@media (max-width: 768px) {
+  .dynamic-card {
+    width: 21rem;
+  }
+}
+@media (max-width: 425px) {
+  .dynamic-card {
+    width: 26rem;
+  }
 }
 
 body {
