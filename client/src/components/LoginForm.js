@@ -13,10 +13,6 @@ export const LoginForm = () => {
                 <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
                 <input type="password" className="form-control" id="exampleInputPassword1"/>
             </div>
-            {/* <div className="mb-3 form-check">
-                <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
-                <label className="form-check-label" for="exampleCheck1">Check me out</label>
-            </div> */}
             <button type="submit" className="btn-primary m-3">Login</button>
             <Link to="/newUser" className="btn-primary m-3" role="button">Create New Account</Link>
         </form>

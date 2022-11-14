@@ -5,10 +5,10 @@ import FooterBanner from '../components/FooterBanner'
 
 const Login = () => {
   return (
-    <div className='container-fluid page-container' >
+    <div className='container-fluid page-container'>
         <div className='row mainSection content-wrap'>
           <NavBar />
-          <div className='login' style={{marginTop: "50px"}}>
+          <div className='login' style={{marginTop: "50px", marginBottom: "50px"}}>
             <LoginForm />
           </div>
         </div>

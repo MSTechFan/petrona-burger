@@ -1,4 +1,10 @@
 .dynamic-card {
     width: 18rem;
     margin: 6px;
+    @media (max-width: 922px){
+        width: 21rem;
+    }
+    @media (max-width: 720px){
+        width: 26rem;
+    }
 }
