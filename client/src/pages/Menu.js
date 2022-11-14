@@ -9,7 +9,7 @@ const Menu = () => {
     const Product = useSelector((state) => state.product.value.products)
     const dispatch = useDispatch()
     return (
-        <div style={{height: "100vh", width: "100vw"}}>
+        <div style={{ width: "100vw"}}>
         <NavBar />
         <div className='container-fluid' style={{marginTop: "40px"}}>
           <div className='row'>
@@ -21,7 +21,7 @@ const Menu = () => {
             <div className='d-flex flex-row flex-wrap'>
                 {Product.map((ele) => {
                     return (
-                        <div className="card" style={{width: "18rem", margin: 5}} key={ele.id}>
+                        <div className="card dynamic-card" key={ele.id}>
                             <img src={ele.img} className="card-img-top" alt="..."/>
                             <div className="card-body">
                                 <h2 className="card-title">{ele.name}</h2>
