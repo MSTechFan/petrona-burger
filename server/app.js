@@ -1,15 +1,23 @@
 const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
+const { uri } = require('./config')
+const Product = require('./models/product')
 
-/* mongoose.connect("mongodb+srv://MSTechFan:CityBarranquilla2022@cluster0.obgityr.mongodb.net/petronaburger?retryWrites=true&w=majority", {
+mongoose.connect(uri, {
     useNewUrlParser: true, useUnifiedTopology: true
-}) */
+})
 
-app.get('/api/products', (req, res) => {
-    res.json({
-        "products": "Aqui irian mis productos, si tuviera algunos :c"
+app.get('/api/products', async (req, res) => {
+    const productList = []
+    await Product.find().then(users => {
+        users.forEach(user => {
+            productList.push({"name": user.name, "_id": user._id})
+        })
     })
+  res.send(productList)
 })
 
 module.exports = app
+
+// insert 10 documents with the information of the products.
