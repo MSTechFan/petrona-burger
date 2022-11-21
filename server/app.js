@@ -10,13 +10,20 @@ mongoose.connect(uri, {
 
 app.get('/api/products', async (req, res) => {
     const productList = []
-    await Product.find().then(users => {
-        users.forEach(user => {
-            productList.push({"name": user.name, "_id": user._id})
+    await Product.find().then(products => {
+        products.forEach(product => {
+            productList.push(product)
         })
     })
-  res.send(productList)
+  res.json(productList)
 })
+
+/* app.get('/api/products/combos', async (req, res) => {
+    const productList = []
+    await Product.find({type: "combo"}, (products) => {
+        res.json(productList)
+    })
+}) */
 
 module.exports = app
 

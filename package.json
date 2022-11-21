@@ -1,0 +1,20 @@
+{
+  "name": "petrona-burger",
+  "version": "1.0.0",
+  "description": "Project idea for a webpage for food delivery.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MSTechFan/petrona-burger.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MSTechFan/petrona-burger/issues"
+  },
+  "homepage": "https://github.com/MSTechFan/petrona-burger#readme"
+}
