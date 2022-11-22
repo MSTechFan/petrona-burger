@@ -3,10 +3,15 @@ const app = express()
 const mongoose = require('mongoose')
 const { uri } = require('./config')
 const Product = require('./models/product')
+const cors = require('cors')
+const bodyParser = require('body-parser')
 
 mongoose.connect(uri, {
     useNewUrlParser: true, useUnifiedTopology: true
 })
+
+app.use(bodyParser.urlencoded({extended: false}))
+app.use(cors())
 
 app.get('/api/products', async (req, res) => {
     const productList = []

@@ -1,10 +1,12 @@
-import {Carousel} from 'react-bootstrap'
+import { Carousel } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import {productListAPI} from '../productListAPI'
+import { productListAPI } from '../API/fetchAPI'
+import _  from 'lodash' 
 
 const CarouselItem = () => {
   const [HEIGHT, WIDTH] = ["93vh", "100vw"]
-  const COMBOS = productListAPI.combos.map(ele => ele)
+  const COMBOS = _.sample(productListAPI(), 3)
+  console.log(productListAPI())
   return (
     <Carousel>
       <Carousel.Item>
@@ -12,7 +14,7 @@ const CarouselItem = () => {
           <img
             className="d-block"
             style={{height: HEIGHT, width: WIDTH}}
-            src={COMBOS[0].img}
+            src={COMBOS[0].imgUrl}
             alt="First slide"
           />
         </Link>
@@ -25,7 +27,7 @@ const CarouselItem = () => {
           <img
             className="d-block"
             style={{height: HEIGHT, width: WIDTH}}
-            src={COMBOS[1].img}
+            src={COMBOS[1].imgUrl}
             alt="Second slide"
           />
         </Link>
@@ -38,7 +40,7 @@ const CarouselItem = () => {
           <img
             className="d-block"
             style={{height: HEIGHT, width: WIDTH}}
-            src={COMBOS[2].img}
+            src={COMBOS[2].imgUrl}
             alt="Third slide"
           />
         </Link>

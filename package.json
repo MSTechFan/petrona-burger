@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/MSTechFan/petrona-burger/issues"
   },
-  "homepage": "https://github.com/MSTechFan/petrona-burger#readme"
+  "homepage": "https://github.com/MSTechFan/petrona-burger#readme",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
 }
