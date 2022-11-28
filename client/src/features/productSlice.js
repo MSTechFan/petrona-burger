@@ -19,12 +19,10 @@ export const fetchCombos = createAsyncThunk('product/fetchProducts', () => {
         .then((response) => response.data.filter(product => product.type === "combo"))
 })
 
-export const fetchNews = createAsyncThunk('product/fetchProducts', () => {
+export const fetchPromos = createAsyncThunk('product/fetchProducts', () => {
     return axios
         .get('http://localhost:5000/api/products')
-        .then((response) => response.data.filter(product => {
-            
-        })
+        .then((response) => response.data.filter(product => product.promo > 0))
 })
 
 const productSlice = createSlice({
@@ -54,10 +52,11 @@ const productSlice = createSlice({
     */
 
     /* reducers: {
-        SearchProduct: (state, action) => {
+        SearchReducer: (state, action) => {
             const findWordRegex = new RegExp(action.payload)
+            const productsCopy = JSON.parse(JSON.stringify(state.products))
             if(action.payload !== ""){
-                state.value.products = productListAPI.products.filter(eleToFind => findWordRegex.test(eleToFind.name))
+                state.products = productsCopy.filter(eleToFind => findWordRegex.test(eleToFind.name))
             }
         },
         SearchCombo: (state, action) => {
@@ -77,6 +76,6 @@ const productSlice = createSlice({
 
 
 
-export const { SearchProduct, SearchCombo, SearchNew } = productSlice.actions
+export const { SearchReducer } = productSlice.actions
 
 export default productSlice.reducer

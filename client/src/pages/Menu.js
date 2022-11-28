@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import SearchBar from '../components/SearchBar'
 import NavBar from '../components/NavBar'
 import { EvalEleAndAddToCart } from '../features/cartSlice'
-import { SearchProduct, fetchProducts } from '../features/productSlice'
+import { SearchReducer, fetchProducts } from '../features/productSlice'
 
 const Menu = () => {
     const Product = useSelector(state => state.product)
@@ -21,7 +21,7 @@ const Menu = () => {
             <div className='container-fluid' style={{marginTop: "40px"}}>
                 <div className='row'>
                     <div className='col-8 col-md-4'>
-                        <SearchBar searchAction={SearchProduct}/>
+                        <SearchBar searchAction={SearchReducer}/>
                     </div>
                 </div>
                 <div className='row'>

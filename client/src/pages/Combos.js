@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import SearchBar from '../components/SearchBar'
 import NavBar from '../components/NavBar'
 import { EvalEleAndAddToCart } from '../features/cartSlice'
-import { fetchCombos, SearchCombo } from '../features/productSlice'
+import { fetchCombos, SearchReducer } from '../features/productSlice'
 
 const Combo = () => {
     const Combo = useSelector(state => state.product)
@@ -21,7 +21,7 @@ const Combo = () => {
         <div className='container-fluid' style={{marginTop: "40px"}}>
           <div className='row'>
             <div className='col-8 col-md-4'>
-                <SearchBar searchAction={SearchCombo}/>
+                <SearchBar searchAction={SearchReducer}/>
             </div>
           </div>
           <div className='row'>
@@ -30,7 +30,7 @@ const Combo = () => {
                     return (
                         <div className="card dynamic-card"  key={ele._id}>
                             <img src={ele.imgUrl} className="card-img-top" alt={ele.name}/>
-                            <div className="card-body">
+                            <div className="card-body" >
                                 <h2 className="card-title">{ele.name}</h2>
                                 <p className="card-text">{ele.description}</p>
                                 <AiFillPlusCircle style={{width: "30px", height: "30px"}} onClick={() => dispatch(EvalEleAndAddToCart(ele))}/>

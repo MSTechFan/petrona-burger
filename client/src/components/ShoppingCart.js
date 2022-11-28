@@ -13,17 +13,20 @@ function ShoppingCart() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const Cart = useSelector((state) => state.cart.value)
+
   const cartQuantity = Cart.reduce((accumulator, curValue) => {
     return accumulator + curValue.quantity
   }, 0)
+
   const cartPrice = Cart.reduce((accumulator, curValue) => {
     return accumulator + (curValue.price * curValue.quantity)
   }, 0)
+
   return (
     <>
       <div>
         <GiHamburger style={{height: "30px", width: "30px", cursor: "pointer"}} onClick={handleShow} />
-        <Badge bg="secondary">{cartQuantity === 0? "" : cartQuantity}</Badge>
+        <Badge bg="secondary">{cartQuantity === 0 ? "" : cartQuantity}</Badge>
         <span className="visually-hidden">unread messages</span>
       </div>
       <Modal show={show} onHide={handleClose}>
