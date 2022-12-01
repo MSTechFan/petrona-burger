@@ -12,6 +12,9 @@ const Home = () => {
           <div className='row'>
             <CarouselItem />
           </div>
+          <div className='row'>
+            <h3 className='primary'>PROMOCIONES</h3>
+          </div>
           <Cards />
           <FooterBanner />
         </div>

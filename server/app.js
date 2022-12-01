@@ -31,5 +31,3 @@ app.get('/api/products', async (req, res) => {
 }) */
 
 module.exports = app
-
-// insert 10 documents with the information of the products.
