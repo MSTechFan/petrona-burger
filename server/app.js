@@ -5,6 +5,7 @@ const { uri } = require('./config')
 const Product = require('./models/product')
 const cors = require('cors')
 const bodyParser = require('body-parser')
+const userRoutes = require('./routes/user')
 
 mongoose.connect(uri, {
     useNewUrlParser: true, useUnifiedTopology: true
@@ -23,11 +24,7 @@ app.get('/api/products', async (req, res) => {
   res.json(productList)
 })
 
-/* app.get('/api/products/combos', async (req, res) => {
-    const productList = []
-    await Product.find({type: "combo"}, (products) => {
-        res.json(productList)
-    })
-}) */
+// using user route
+app.use(userRoutes)
 
 module.exports = app
