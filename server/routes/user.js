@@ -7,7 +7,7 @@ router.post('/register', signup, (req, res) => {
 
 })
 
-router.post('/login', signin, (req, res) => {
+router.post('/api/login', signin, (req, res) => {
 
 })
 
@@ -24,7 +24,7 @@ router.get('/hiddencontent', verifyToken, (req, res) => {
                 message: 'Congratulations! but there is no hidden content'
             })
     } else {
-        res.status(403)
+        res.status(401)
             .send({
                 message: 'Unathorised access'
             })

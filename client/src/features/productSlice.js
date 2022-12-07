@@ -25,6 +25,8 @@ export const fetchPromos = createAsyncThunk('product/fetchProducts', () => {
         .then((response) => response.data.filter(product => product.promo > 0))
 })
 
+// here we need to apply more extraReducers for the other use's cases, fetchCombos and fetchPromos
+
 const productSlice = createSlice({
     name: 'product',
     initialState,

@@ -65,7 +65,7 @@ exports.signin = (req, res) => {
         const token = jwt.sign({
             id: user.id
         }, apiSecret, {
-            expiresIn: 86400
+            expiresIn: 60 // 86400 required
         })
 
         // responding to client request with user profile success message and access token
