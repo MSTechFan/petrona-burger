@@ -7,6 +7,6 @@ export default configureStore({
     reducer: {
         cart: cartSlice,
         product: productSlice,
-        session: sessionSlice,
+        user: sessionSlice,
     },
 })

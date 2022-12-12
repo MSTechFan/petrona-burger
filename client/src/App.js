@@ -1,4 +1,5 @@
-import { Route, Routes } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import Combos from './pages/Combos'
 import Home from './pages/Home'
 import Login from './pages/Login'
@@ -8,14 +9,29 @@ import NewUser from './pages/NewUser'
 import NotFound from './pages/NotFound'
 
 const App = () => {
+  const isLoggedIn = useSelector(state => state.user.loading)
+
+  function redirectRoute (route) {
+    if(isLoggedIn) {
+      return route
+    } else {
+      return (
+        <div>
+          <h1>ERROR RUTA INCORRECTA</h1>
+        </div>
+      )
+    }
+  }
+
   return (
-    <Routes>  
-      <Route path='/' element={<Home/>} />
-      <Route path='newUser' element={<NewUser />}/>
-      <Route path='login' element={<Login />}/>
-      <Route path='menu' element={<Menu />}/>
-      <Route path='combos' element={<Combos />}/>
-      <Route path='news' element={<News />}/>
+    <Routes>
+      <Route path="/" element={<Navigate to="/login" />} />
+      <Route path='login' element={<Login />}/> 
+      <Route path='newUser' element={<NewUser />}/> 
+      <Route path='home' element={redirectRoute(<Home/>)} />
+      <Route path='menu' element={redirectRoute(<Menu/>)}/>
+      <Route path='combos' element={redirectRoute(<Combos/>)}/>
+      <Route path='news' element={redirectRoute(<News/>)}/>
       <Route path='*' element={<NotFound />}/>
     </Routes>
   )

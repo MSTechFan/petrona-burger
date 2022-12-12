@@ -1,9 +1,6 @@
-import NavBar from '../components/NavBar'
-
 const NotFound = () => {
   return (
     <div className='container-fluid' style={{height: "100vh"}}>
-        <NavBar />
         <h1>404 Error Page</h1>
         <p className="zoom-area"><b>Oops...</b>  something went wrong. </p>
         <section className="error-container">
