@@ -1,16 +1,64 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { productListAPI } from '../productListAPI'
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
+import axios from 'axios'
+
+const initialState = {
+    loading: false, 
+    products: [],
+    error: ''
+}
+
+export const fetchProducts = createAsyncThunk('product/fetchProducts', () => {
+    return axios
+        .get('http://localhost:5000/api/products')
+        .then(response => response.data)
+})
+
+export const fetchCombos = createAsyncThunk('product/fetchProducts', () => {
+    return axios
+        .get('http://localhost:5000/api/products')
+        .then((response) => response.data.filter(product => product.type === "combo"))
+})
+
+export const fetchPromos = createAsyncThunk('product/fetchProducts', () => {
+    return axios
+        .get('http://localhost:5000/api/products')
+        .then((response) => response.data.filter(product => product.promo > 0))
+})
+
+// here we need to apply more extraReducers for the other use's cases, fetchCombos and fetchPromos
 
 const productSlice = createSlice({
     name: 'product',
-    initialState: {
-        value: productListAPI
+    initialState,
+    extraReducers: (builder) => {
+        builder.addCase(fetchProducts.pending, (state) => {
+            state.loading = true
+        })
+        builder.addCase(fetchProducts.fulfilled, (state, action) => {
+            state.loading = false
+            state.products = action.payload
+            state.error = ''
+        })
+        builder.addCase(fetchProducts.rejected, (state, action) => {
+            state.loading = false
+            state.products = []
+            state.error = action.error.message
+        })
     },
-    reducers: {
-        SearchProduct: (state, action) => {
+
+    /* 
+    
+        code commented since it needs to be solved at first how the state is going to be managed by 
+        the createAsynThunk 
+    
+    */
+
+    /* reducers: {
+        SearchReducer: (state, action) => {
             const findWordRegex = new RegExp(action.payload)
+            const productsCopy = JSON.parse(JSON.stringify(state.products))
             if(action.payload !== ""){
-                state.value.products = productListAPI.products.filter(eleToFind => findWordRegex.test(eleToFind.name))
+                state.products = productsCopy.filter(eleToFind => findWordRegex.test(eleToFind.name))
             }
         },
         SearchCombo: (state, action) => {
@@ -25,9 +73,11 @@ const productSlice = createSlice({
                 state.value.news = productListAPI.news.filter(eleToFind => findWordRegex.test(eleToFind.name))
             }
         },
-    }
+    } */
 })
 
-export const { SearchProduct, SearchCombo, SearchNew } = productSlice.actions
+
+
+export const { SearchReducer } = productSlice.actions
 
 export default productSlice.reducer

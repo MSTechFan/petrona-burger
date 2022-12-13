@@ -1,51 +1,45 @@
-import {Carousel} from 'react-bootstrap'
+import { Carousel } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import {productListAPI} from '../productListAPI'
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { fetchCombos } from '../features/productSlice'
+import _ from 'lodash'
+
 
 const CarouselItem = () => {
   const [HEIGHT, WIDTH] = ["93vh", "100vw"]
-  const COMBOS = productListAPI.combos.map(ele => ele)
+  const combos = useSelector(state => state.product)
+  const combosToShow = _.sampleSize(combos.products, 3)
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(fetchCombos())
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+  
   return (
     <Carousel>
-      <Carousel.Item>
-        <Link to='combos'>
-          <img
-            className="d-block"
-            style={{height: HEIGHT, width: WIDTH}}
-            src={COMBOS[0].img}
-            alt="First slide"
-          />
-        </Link>
-        <Carousel.Caption>
-          <h3>{COMBOS[0].name}</h3>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <Link to="combos">
-          <img
-            className="d-block"
-            style={{height: HEIGHT, width: WIDTH}}
-            src={COMBOS[1].img}
-            alt="Second slide"
-          />
-        </Link>
-        <Carousel.Caption>
-          <h3>{COMBOS[1].name}</h3>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <Link to="combos">
-          <img
-            className="d-block"
-            style={{height: HEIGHT, width: WIDTH}}
-            src={COMBOS[2].img}
-            alt="Third slide"
-          />
-        </Link>
-        <Carousel.Caption>
-          <h3>{COMBOS[2].name}</h3>
-        </Carousel.Caption>
-      </Carousel.Item>
+      {combos.loading && <div>Loading ... </div>}
+      {!combos.loading && combos.error ? <div>Error: {combos.error}</div> : null}
+      {
+        !combos.loading && combos.products.length ? (
+            combosToShow.map( combo => (
+              <Carousel.Item key={combo._id}>
+                <Link to='combos'>
+                  <img
+                    className="d-block"
+                    style={{height: HEIGHT, width: WIDTH}}
+                    src={combo.imgUrl}
+                    alt={combo.name}
+                  />
+                </Link>
+                <Carousel.Caption>
+                  <h3>{combo.name}</h3>
+                </Carousel.Caption>
+              </Carousel.Item>
+            )
+          )
+        ): null}
     </Carousel>
   )
 }

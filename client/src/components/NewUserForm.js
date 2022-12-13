@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 const NewUserForm = () => {
   return (
     <form>
@@ -13,7 +15,8 @@ const NewUserForm = () => {
             <label htmlFor="password" className="form-label">Password</label>
             <input type="password" className="form-control" id="exampleInputPassword1"/>
         </div>
-        <button type="submit" className="btn-primary">Create</button>
+        <Link to="/login" className="btn-primary m-3" role="button">Back</Link>
+        <button type="submit" className="btn-primary">Create</button>        
     </form>
   )
 }
