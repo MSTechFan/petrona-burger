@@ -9,11 +9,20 @@ const initialState = {
     success: false, // for monitoring the registration
 }
 
+
+// el error está en la forma de usar el axios para hacer POST al api
 export const loginPost = createAsyncThunk('user/loginPost', (email, password) => {
     return axios
-        .post('http://localhost:5000/api/login', {email, password})
+        .post('http://localhost:5000/api/login', email, password)
         .then(response => response.data)
-})
+    },
+    
+    /* {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    } */
+)
 
 
 const sessionSlice = createSlice({
@@ -25,7 +34,15 @@ const sessionSlice = createSlice({
             state.loading = true
         })
         builder.addCase(loginPost.fulfilled, (state, action) => {
-            state.error = action.payload.message
+            console.log({fulfilled: action.payload})
+            /* state.error = action.payload.message
+            state.success = true */
+
+        })
+        builder.addCase(loginPost.rejected, (state, action) => {
+            console.log({error: action})
+            /* state.error = action.payload.message
+            state.loading = false */
         })
     }
 })
