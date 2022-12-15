@@ -12,11 +12,19 @@ const initialState = {
 
 // el error está en la forma de usar el axios para hacer POST al api
 export const loginPost = createAsyncThunk('user/loginPost', (email, password) => {
+    const axiosConfig = {
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded',
+        "Access-Control-Allow-Origin": "*", }
+    }   
+
     return axios
-        .post('http://localhost:5000/api/login', email, password)
-        .then(response => response.data)
+        .post('http://localhost:5000/api/login', email, password, axiosConfig)
+        .then(response => {
+            return response.data
+        }, (error) => {
+            return Promise.reject(error.response.data)
+        })
     },
-    
     /* {
         headers: {
             'Content-Type': 'application/json'
@@ -34,15 +42,16 @@ const sessionSlice = createSlice({
             state.loading = true
         })
         builder.addCase(loginPost.fulfilled, (state, action) => {
-            console.log({fulfilled: action.payload})
-            /* state.error = action.payload.message
-            state.success = true */
-
+            state.success = true
+            state.userInfo = action.payload.user
+            state.userToken = action.payload.accessToken
+            state.success = true
         })
         builder.addCase(loginPost.rejected, (state, action) => {
-            console.log({error: action})
-            /* state.error = action.payload.message
-            state.loading = false */
+            // save in the state the error message and loadig = false
+            state.error = action.error.message
+            state.loading = false 
+            alert(state.error)
         })
     }
 })

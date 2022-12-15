@@ -9,10 +9,10 @@ import NewUser from './pages/NewUser'
 import NotFound from './pages/NotFound'
 
 const App = () => {
-  const isLoggedIn = useSelector(state => state.user.loading)
+  const {userToken} = useSelector(state => state.user)
 
   function redirectRoute (route) {
-    if(isLoggedIn) {
+    if(userToken) {
       return route
     } else {
       return (
@@ -23,9 +23,10 @@ const App = () => {
     }
   }
 
+
   return (
     <Routes>
-      <Route path="/" element={<Navigate to="/login" />} />
+      <Route path="/" element={userToken ? <Navigate to="/home" /> : <Navigate to="/login" />} />
       <Route path='login' element={<Login />}/> 
       <Route path='newUser' element={<NewUser />}/> 
       <Route path='home' element={redirectRoute(<Home/>)} />

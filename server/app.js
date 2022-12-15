@@ -11,7 +11,8 @@ mongoose.connect("mongodb+srv://MSTechFan:CityBarranquilla2022@cluster0.obgityr.
     useNewUrlParser: true, useUnifiedTopology: true
 })
 
-app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.urlencoded({extended: true}))
+app.use(express.json())
 app.use(cors())
 
 app.get('/api/products', async (req, res) => {
