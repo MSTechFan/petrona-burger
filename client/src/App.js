@@ -1,3 +1,4 @@
+// import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import Combos from './pages/Combos'
@@ -12,6 +13,7 @@ const App = () => {
   const {userToken} = useSelector(state => state.user)
 
   function redirectRoute (route) {
+    console.log("🚀 ~ file: App.js:20 ~ redirectRoute ~ userToken", userToken)
     if(userToken) {
       return route
     } else {
@@ -22,6 +24,9 @@ const App = () => {
       )
     }
   }
+  /* useEffect(() => {
+    redirectRoute(<Home/>)
+  }, [userToken]) */
 
 
   return (

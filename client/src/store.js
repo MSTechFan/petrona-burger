@@ -11,4 +11,5 @@ export default configureStore({
         product: productSlice,
         user: sessionSlice,
     },
+    devTools: window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 })

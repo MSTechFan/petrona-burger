@@ -5,7 +5,7 @@ const initialState = {
     loading: false, 
     userInfo: {}, // for user object
     userToken: null, // for storing the JWT
-    error: null,
+    message: null,
     success: false, // for monitoring the registration
 }
 
@@ -46,6 +46,8 @@ const sessionSlice = createSlice({
             state.userInfo = action.payload.user
             state.userToken = action.payload.accessToken
             state.success = true
+            state.loading = false
+            state.message = action.payload.message
         })
         builder.addCase(loginPost.rejected, (state, action) => {
             // save in the state the error message and loadig = false
