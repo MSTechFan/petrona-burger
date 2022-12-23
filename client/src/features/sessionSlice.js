@@ -36,7 +36,11 @@ export const loginPost = createAsyncThunk('user/loginPost', (email, password) =>
 const sessionSlice = createSlice({
     name: 'user',
     initialState,
-    reducers: {},
+    reducers: {
+        manageLogOut: (state) => {
+            state = initialState
+        },
+    },
     extraReducers: (builder) => {
         builder.addCase(loginPost.pending, (state) => {
             state.loading = true
@@ -44,7 +48,7 @@ const sessionSlice = createSlice({
         builder.addCase(loginPost.fulfilled, (state, action) => {
             state.success = true
             state.userInfo = action.payload.user
-            state.userToken = action.payload.accessToken
+            state.userToken = action.payload.accessToken // pensando en cambiar el initialState al token de la API
             state.success = true
             state.loading = false
             state.message = action.payload.message
@@ -57,5 +61,7 @@ const sessionSlice = createSlice({
         })
     }
 })
+
+export const {manageLogOut} = sessionSlice.actions
 
 export default sessionSlice.reducer

@@ -1,5 +1,4 @@
-// import { useEffect } from 'react'
-import { useSelector } from 'react-redux'
+// import { useSelector } from 'react-redux'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import Combos from './pages/Combos'
 import Home from './pages/Home'
@@ -10,23 +9,19 @@ import NewUser from './pages/NewUser'
 import NotFound from './pages/NotFound'
 
 const App = () => {
-  const {userToken} = useSelector(state => state.user)
+  const userToken = localStorage.getItem('userDetails')
+  // const navigate = useNavigate()
 
   function redirectRoute (route) {
-    console.log("🚀 ~ file: App.js:20 ~ redirectRoute ~ userToken", userToken)
     if(userToken) {
       return route
     } else {
       return (
-        <div>
-          <h1>ERROR RUTA INCORRECTA</h1>
-        </div>
+        <Login />
       )
     }
   }
-  /* useEffect(() => {
-    redirectRoute(<Home/>)
-  }, [userToken]) */
+  
 
 
   return (
@@ -34,7 +29,7 @@ const App = () => {
       <Route path="/" element={userToken ? <Navigate to="/home" /> : <Navigate to="/login" />} />
       <Route path='login' element={<Login />}/> 
       <Route path='newUser' element={<NewUser />}/> 
-      <Route path='home' element={redirectRoute(<Home/>)} />
+      <Route path='home' element={redirectRoute(<Home/>)}/>
       <Route path='menu' element={redirectRoute(<Menu/>)}/>
       <Route path='combos' element={redirectRoute(<Combos/>)}/>
       <Route path='news' element={redirectRoute(<News/>)}/>
